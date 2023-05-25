@@ -41,41 +41,59 @@ using GenericsClientConApp;
 #endregion
 
 #region With GenArray<int>
-//GenArray<int> genArray = new GenArray<int>();
-//genArray.Add(10);
-//genArray.Add(2);
+GenArray<int> genArray = new GenArray<int>();
+genArray.Add(10);
+genArray.Add(2);
 
-//Printer.Print($"{genArray[1]}", "genArray[1]");
-////Printer.Print($"{genArray[2]}", "genArray[2]");
-//genArray.Add(7);
-//genArray.Add(9);
+Printer.Print($"{genArray[1]}", "genArray[1]");
+//Printer.Print($"{genArray[2]}", "genArray[2]");
+genArray.Add(7);
+genArray.Add(9);
 
-//Printer.PrintHeader("Loop through the Array");
-//for (int i = 0; i < genArray.Length; i++)
-//{
-//  WriteLine($"genArray[{i}] = {genArray[i]}");
-//}
-//Printer.PrintFooter();
+Printer.PrintHeader("Loop through the Array");
+for (int i = 0; i < genArray.Length; i++)
+{
+  WriteLine($"genArray[{i}] = {genArray[i]}");
+}
+Printer.PrintFooter();
+
+genArray.Sort();
+Printer.PrintHeader("After Sort");
+for (int i = 0; i < genArray.Length; i++)
+{
+  WriteLine($"genArray[{i}] = {genArray[i]}");
+}
+Printer.PrintFooter();
 
 #endregion
 
 
 #region GenArray<string>
-GenArray<string> genArray = new GenArray<string>();
-genArray.Add("Tintin");
-genArray.Add("Mickey");
 
-Printer.Print($"{genArray[1]}", "genArray[1]");
-//Printer.Print($"{genArray[2]}", "genArray[2]");
-genArray.Add("Jerry");
-genArray.Add("Phantom");
 
-Printer.PrintHeader("Loop through the Array");
-for (int i = 0; i < genArray.Length; i++)
-{
-	WriteLine($"genArray[{i}] = {genArray[i]}");
-}
-Printer.PrintFooter();
+//GenArray<string> genArray = new GenArray<string>();
+//genArray.Add("Tintin");
+//genArray.Add("Mickey");
+
+//Printer.Print($"{genArray[1]}", "genArray[1]");
+////Printer.Print($"{genArray[2]}", "genArray[2]");
+//genArray.Add("Jerry");
+//genArray.Add("Phantom");
+
+//Printer.PrintHeader("Loop through the Array");
+//for (int i = 0; i < genArray.Length; i++)
+//{
+//	WriteLine($"genArray[{i}] = {genArray[i]}");
+//}
+//Printer.PrintFooter();
+
+//genArray.Sort();
+//Printer.PrintHeader("After Sort");
+//for (int i = 0; i < genArray.Length; i++)
+//{
+//  WriteLine($"genArray[{i}] = {genArray[i]}");
+//}
+//Printer.PrintFooter();
 
 
 #endregion

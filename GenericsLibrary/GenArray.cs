@@ -1,6 +1,6 @@
 ﻿namespace GenericsLibrary
 {
-  public class GenArray<T>
+  public class GenArray<T> where T : IComparable<T>
   {
     int _arraySize;
     int _position;
@@ -42,21 +42,22 @@
       }
     }
 
-    //public void Sort()
-    //{
-    //  for (int i = 0; i < _position; i++)
-    //  {
-    //    for (int j = (i+1); j < _position; j++)
-    //    {
-    //      if (_array[i] > _array[i]) // Will have to use Constraint
-    //      {
-    //        T temp = _array[i];
-    //        _array[i] = _array[j];
-    //        _array[j] = temp;
-    //      }
-    //    }
-    //  }
-    //}
+    public void Sort()
+    {
+      for (int i = 0; i < _position; i++)
+      {
+        for (int j = (i + 1); j < _position; j++)
+        {
+          //if (_array[i] >_array[j]) // Will have to use Constraint
+            if (_array[i].CompareTo(_array[j]) > 0) 
+            {
+              T temp = _array[i];
+            _array[i] = _array[j];
+            _array[j] = temp;
+          }
+        }
+      }
+    }
 
   }
 }
