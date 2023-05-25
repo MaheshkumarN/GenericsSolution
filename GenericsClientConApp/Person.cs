@@ -22,5 +22,21 @@
     {
       return $"Name: {_name} and Age: {_age}";
     }
+
+    // Step I
+    public static bool CompareByName(Person p1, Person p2)
+    {
+      if(p1._name.CompareTo(p2._name) > 0)
+        return true;
+      return false;
+    }
+
+    public static bool CompareByAge(Person p1, Person p2)
+    {
+      if(p1._age > p2._age)
+        return true;
+      return false;
+    }
+
   }
 }

@@ -1,5 +1,9 @@
 ﻿namespace GenericsLibrary
 {
+
+  //Step I
+  public delegate bool CompareFN<S>(S value1, S value2);
+
   public class GenArray<T> where T : IComparable<T>
   {
     int _arraySize;
@@ -51,6 +55,26 @@
           //if (_array[i] >_array[j]) // Will have to use Constraint
             if (_array[i].CompareTo(_array[j]) > 0) 
             {
+              T temp = _array[i];
+            _array[i] = _array[j];
+            _array[j] = temp;
+          }
+        }
+      }
+    }
+    
+    // Step II
+    public void Sort(CompareFN<T> del)
+    {
+      for (int i = 0; i < _position; i++)
+      {
+        for (int j = (i + 1); j < _position; j++)
+        {
+
+          //if (_array[i].CompareTo(_array[j]) > 0) 
+          // Step III
+          if (del(_array[i],_array[j]))
+          {
               T temp = _array[i];
             _array[i] = _array[j];
             _array[j] = temp;

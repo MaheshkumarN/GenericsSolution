@@ -101,8 +101,9 @@ genArray.Add(new Person(7, "Mickey"));
 
 Printer.Print($"{genArray[1]}", "genArray[1]");
 //Printer.Print($"{genArray[2]}", "genArray[2]");
+genArray.Add(new Person(18, "Phantom"));
 genArray.Add(new Person(3, "Jerry"));
-genArray.Add(new Person(8, "Phantom"));
+
 
 Printer.PrintHeader("Loop through the Array");
 for (int i = 0; i < genArray.Length; i++)
@@ -111,8 +112,18 @@ for (int i = 0; i < genArray.Length; i++)
 }
 Printer.PrintFooter();
 
-genArray.Sort();
-Printer.PrintHeader("After Sort");
+//genArray.Sort();
+// Step II
+genArray.Sort(Person.CompareByAge);
+Printer.PrintHeader("After Sort by Age");
+for (int i = 0; i < genArray.Length; i++)
+{
+  WriteLine($"genArray[{i}] = {genArray[i]}");
+}
+Printer.PrintFooter();
+
+genArray.Sort(Person.CompareByName);
+Printer.PrintHeader("After Sort by Name");
 for (int i = 0; i < genArray.Length; i++)
 {
   WriteLine($"genArray[{i}] = {genArray[i]}");
