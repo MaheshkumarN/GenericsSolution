@@ -14,14 +14,14 @@ using GenericsClientConApp;
 
 int num1 = 10, num2 = 20;
 SwapTool swapTool = new SwapTool();
-//WriteLine($"Before Swap Num1: {num1} and Num2: {num2}");
-//swapTool.Swap(num1, num2);
-//WriteLine($"After Swap Num1: {num1} and Num2: {num2}");
+WriteLine($"Before Swap Num1: {num1} and Num2: {num2}");
+swapTool.Swap(num1, num2);
+WriteLine($"After Swap Num1: {num1} and Num2: {num2}");
 
 
-//WriteLine($"Ref Before Swap Num1: {num1} and Num2: {num2}");
-//swapTool.Swap(num1, num2);
-//WriteLine($"Ref After Swap Num1: {num1} and Num2: {num2}");
+WriteLine($"Ref Before Swap Num1: {num1} and Num2: {num2}");
+swapTool.Swap(num1, num2);
+WriteLine($"Ref After Swap Num1: {num1} and Num2: {num2}");
 
 string firstName = "Peter", lastName = "Parker";
 //WriteLine($"Ref Before Swap FirstName: {firstName} and LastName: {lastName}");
@@ -34,6 +34,3 @@ string firstName = "Peter", lastName = "Parker";
 //Printer.PrintFooter();
 
 
-Printer.Print($"FirstName: {firstName} and LastName: {lastName}", "Before Swap");
-swapTool.Swap(ref firstName, ref lastName);
-Printer.Print($"FirstName: {firstName} and LastName: {lastName}", "After Swap");
